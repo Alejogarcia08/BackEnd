@@ -22,7 +22,7 @@ async function Test() {
   }
 
   const objeto4 = {
-    title: "Producto 4",
+    title: "Producto 4", 
     price: 400,
     thumbnail: "url"
   }
