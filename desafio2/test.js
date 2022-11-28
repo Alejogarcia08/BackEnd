@@ -27,11 +27,11 @@ async function Test() {
     thumbnail: "url"
   }
 
-  await products.save(objeto4).then(data => console.log(data));
-  // await products.getAll().then(data => console.log(data));
+  await products.save(objeto1).then(data => console.log(data)); 
+  //await products.getAll().then(data => console.log(data));
   // await products.getById(3).then(data => console.log(data));
-  // await products.deleteById(4);
-  // await products.deleteAll();
+  //await products.deleteById(4);
+  //await products.deleteAll();
 
 }
 

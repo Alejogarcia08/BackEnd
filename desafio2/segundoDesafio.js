@@ -47,7 +47,8 @@ class Container {
     try {
       const readProducts = await fs.promises.readFile(this.path, 'utf-8');
       return JSON.parse(readProducts)
-    }catch(err) {
+    }
+    catch(err) {
       console.log(err);
     }
   }

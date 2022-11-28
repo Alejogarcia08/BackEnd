@@ -22,13 +22,17 @@ async function start() {
         thumnail: "url"
     }
 
-    const product5 = {
+    const product4 = {
         name: "remera",
         price: 250,
         thumnail: "url"
     }
-
-await products.getAll().then(a=>console.log(a));
-
+    
+    await products.deleteAll()
+    //await products.getAll().then(a => console.log(a));
+    await products.save(product3)
+    await products.save(product2)
+    await products.save(product1)
+    
 }
-start()
+start();
