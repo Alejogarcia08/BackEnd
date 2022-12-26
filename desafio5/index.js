@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }))
 app.set('views', './views')
 app.set('view engine', 'ejs')
 
-const PORT = 8070
+const PORT = 3000
 
 
 app.get('/', (req, res) => {
