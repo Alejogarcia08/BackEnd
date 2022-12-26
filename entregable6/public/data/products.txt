@@ -1,0 +1,20 @@
+[
+  {
+    "tittle": "campera",
+    "price": 25000,
+    "thumbnail": "https://equus.vtexassets.com/arquivos/ids/227651-800-auto?v=637821001295300000&width=800&height=auto&aspect=true",
+    "id": 1
+  },
+  {
+    "tittle": "Remera",
+    "price": 5500,
+    "thumbnail": "https://bowen.com.ar/media/catalog/product/cache/5bf96cebad6be672c7bbf28d7c2c8a8b/b/r/broken_tank_bu_tb52107_9_.jpg",
+    "id": 2
+  },
+  {
+    "tittle": "jean",
+    "price": 14000,
+    "thumbnail": "https://www.versace.com/dw/image/v2/ABAO_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw6ee3fd22/original/90_1006372-1A04165_1D360_10_MedusaTwistedJeans-PantsandShorts-versace-online-store_1_0.jpg?sw=1440&sh=2000&sm=fit&sfrm=jpg",
+    "id": 3
+  }
+]
