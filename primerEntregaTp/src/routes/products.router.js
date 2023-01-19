@@ -9,7 +9,7 @@ const productosRouter = new Router();
 const ContenedorArchivo = require('../contenedores/ContenedorArchivo')
 
 // Se instancia la clase contenedor
-const ProductService = new ContenedorArchivo("./Aqui va la ruta del archivo")
+const ProductService = new ContenedorArchivo("../db/dbProductos.json")
 
 
 // funcion Error
@@ -40,33 +40,38 @@ function soloAdmins(req, res, next) {
 // Endpoints
 productosRouter.get('/', async (req, res) => {
     // logica
-
-    res.json()
+    const productos = ProductService.getAll();
+    res.json(productos)
 })
 //    -->   /api/productos/5
 productosRouter.get('/:id', async (req, res) => {
     // logica
-
-    res.json()
+    const id = req.params.id;
+    const producto = ProductService.getById(parseInt(id));
+    res.json(producto)
 })
 
 // tiene permisos un admin
 productosRouter.post('/', soloAdmins, async (req, res) => {
     // logica
-
-    res.json()
+    const obj = req.body;
+    const newObj = ProductService.create(obj);
+    res.json(newObj)
 })
 
 productosRouter.put('/:id', soloAdmins, async (req, res) => {
     // logica
-
-    res.json()
+    const id = req.params.id;
+    const obj = req.body;
+    const updatedProducto = ProductService.updateById(parseInt(id), obj);
+    res.json(updatedProducto)
 })
 
 productosRouter.delete('/:id', soloAdmins, async (req, res) => {
     // logica
-
-    res.json()
+    const id = req.params.id;
+    const deletID = ProductService.deleteById(parseInt(id));
+    res.json(deletID)
 })
 
 

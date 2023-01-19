@@ -4,7 +4,7 @@ const Contenedor = require("./products");
 const router = express.Router();
 const contenedor = new Contenedor();
 
-router.get("/", (_req, res) => {
+router.get("/", (req, res) => {
     const productos = contenedor.getAll();
     res.send(productos);
 })

@@ -1,20 +1,20 @@
 [
-    {
-        "name": "buzo",
-        "price": 300,
-        "thumnail": "url",
-        "id": 1
-    },
-    {
-        "name": "pantalon",
-        "price": 450,
-        "thumnail": "url",
-        "id": 2
-    },
-    {
-        "name": "zapatillas",
-        "price": 350,
-        "thumnail": "url",
-        "id": 3
-    }
+  {
+    "name": "buzo",
+    "price": 300,
+    "thumnail": "url",
+    "id": 1
+  },
+  {
+    "name": "pantalon",
+    "price": 450,
+    "thumnail": "url",
+    "id": 2
+  },
+  {
+    "name": "zapatillas",
+    "price": 350,
+    "thumnail": "url",
+    "id": 3
+  }
 ]

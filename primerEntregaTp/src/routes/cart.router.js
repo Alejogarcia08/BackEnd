@@ -9,7 +9,7 @@ const carritosRouter = new Router();
 const ContenedorArchivo = require('../contenedores/ContenedorArchivoCarrito')
 
 // Se instancia la clase contenedor
-const ProductService = new ContenedorArchivo("./Aqui va la ruta del archivo")
+const ProductService = new ContenedorArchivo("../db/dbCarritos.json")
 
 
 
@@ -17,33 +17,43 @@ const ProductService = new ContenedorArchivo("./Aqui va la ruta del archivo")
 carritosRouter.post('/', async (req, res) => {
     // logica
 
-    res.json()
+    const cart = req.body;
+    const newCarrito = ProductService.create(cart);
+    res.json(newCarrito)
 })
 
 carritosRouter.delete('/:id', async (req, res) => {
     // logica
 
-    res.json()
+    const all = req.params.id;
+    const deletAll = ProductService.deleteAll(parseInt(all));
+    res.json(deletAll)
 })
 
 carritosRouter.get('/:id/products', async (req, res) => {
     // logica
-
-    res.json()
+    const productos = ProductService.getAll();
+    res.json(productos)
+    
 })
 
 
 carritosRouter.post('/:id/products', async (req, res) => {
     // logica
-
-    res.json()
+    const id = req.params.id;
+    const obj = req.body;
+    const updatedProducto = ProductService.updateById(parseInt(id), obj);
+    res.json(updatedProducto)
+    
 })
 
 
 carritosRouter.delete('/:id/products/:id_prod', async (req, res) => {
     // logica
+    const id = req.params.id;
+    const deletID = ProductService.deleteById(parseInt(id));
+    res.json(deletID)
 
-    res.json()
 })
 
 module.exports = carritosRouter
