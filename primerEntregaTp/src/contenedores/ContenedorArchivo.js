@@ -2,11 +2,11 @@ const { promises: fs } = require('fs')
 
 class ContenedorArchivo {
 
-    constructor(ruta) {
-        this.ruta = ruta;
+    constructor(path) {
+        this.path = path;
     }
 
-    async listar(id) {
+    async getById(id) {
         try {
             const readProducts = await fs.promises.readFile(this.path, 'utf-8');
             const data = JSON.parse(readProducts);
@@ -18,9 +18,9 @@ class ContenedorArchivo {
         }
     }
 
-    async listarAll() {
+    async getAll() {
         try {
-            const readProducts = await fs.promises.readFile(this.ruta, 'utf-8');
+            const readProducts = await fs.promises.readFile(this.path, 'utf-8');
             return JSON.parse(readProducts)
         }
         catch (err) {
@@ -28,9 +28,9 @@ class ContenedorArchivo {
         }
     }
 
-    async guardar(obj) {
+    async save(obj) {
         try {
-            const products = await fs.promises.readFile(this.ruta, 'utf-8');
+            const products = await fs.promises.readFile(this.path, 'utf-8');
             const data = JSON.parse(products);
             let newId
             data.length === 0 ? newId = 1 : newId = data[data.length - 1].id + 1;
@@ -43,13 +43,13 @@ class ContenedorArchivo {
         }
     }
 
-    async actualizar(elem, id) {
+    async update(elem, id) {
 
     }
 
-    async borrar(id) {
+    async deleteById(id) {
         try {
-            const readProducts = await fs.promises.readFile(this.ruta, 'utf-8');
+            const readProducts = await fs.promises.readFile(this.path, 'utf-8');
             const data = JSON.parse(readProducts);
             const obj = data.filter(obj => obj.id !== id);
             await this.writeFile(obj);
@@ -59,7 +59,7 @@ class ContenedorArchivo {
 
     }
 
-    async borrarAll() {
+    async deleteAll() {
         try {
             this.writeFile([]);
         } catch (err) {
@@ -68,4 +68,4 @@ class ContenedorArchivo {
     }
 }
 
-module.exports = ContenedorArchivo
+module.exports = ContenedorArchivo;

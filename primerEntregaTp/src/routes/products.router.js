@@ -13,12 +13,12 @@ const ProductService = new ContenedorArchivo("../db/dbProductos.json")
 
 
 // funcion Error
-function crearErrorNoEsAdmin(ruta, metodo) {
+function crearErrorNoEsAdmin(path, metodo) {
     const error = {
         error: -1,
     }
-    if (ruta && metodo) {
-        error.descripcion = `ruta '${ruta}' metodo '${metodo}' no autorizado`
+    if (path && metodo) {
+        error.descripcion = `path '${path}' metodo '${metodo}' no autorizado`
     } else {
         error.descripcion = 'no autorizado'
     }
